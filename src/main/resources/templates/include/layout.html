@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <title> 우리는 한다 연습 <title>
+    
+    <link href="/css/layout.css">   
+    
+    <th:block layout:fragment="css"></th:block>
+    <th:block layout:fragment="script">
+        <script src="/js/layout.js" defer></script>
+    </th:block>
+    
+</head>
+
+<body>
+    <div class="content_container" >
+        <nav class="nav nav-left">
+            <div class="header">
+                <div class="nav-header">
+                    <p class="main">사이트씨엠에스</p>
+                </div>
+            </div>
+            <div class="nav-body">
+                <span class="nav-menu">請求管理</span>
+                <span class="nav-menu">특집</span>
+                <span class="nav-menu">배너</span>
+                <span class="nav-menu">장르</span>
+                <span class="nav-menu">바우처코드</span>
+                <span class="nav-menu">신작·금방방영됨</span>
+                <span class="nav-menu"><a th:href="@{/in-app-review}">인앱리뷰</a></span>
+                <span class="nav-menu">암호변경</span>
+            </div>
+        </nav>
+        <th:block layout:fragment="content"></th:block>
+    </div>
+</body>
+
+<script>
+    
+    
+</script>
+
+</html>

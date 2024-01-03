@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.domain.InAppReviewRepository">
+    <select id="findALl" resultType="User">
+        SELECT * FROM user;
+    </select>
+    
+    <select id="getInAppReview" parameterType="inAppReviewId" 
+            resultType="InAppReviewQueryModel">
+        SELECT
+            in_app_review_id,
+            in_app_review_name,
+            disp_start,
+            disp_end,
+            watching_min_time,
+            ios_disp_flag,
+            android_disp_flag,
+            approved,
+            delete_flag,
+        FROM
+            in_app_review
+        WHERE
+            in_app_review_id="#{inAppReviewId}"
+    </select>
+
+
+</mapper>

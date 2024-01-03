@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <title> 우리는 한다 연습 </title>
+    
+    <link rel="stylesheet" href="/css/layout.css">
+    <script src="/js/jquery-3.6.3.min.js"></script>
+
+</head>
+
+<body>
+    <div class="content_container contents_row" >
+        <nav class="nav nav-left">
+            <div class="header">
+                <div class="nav-header">
+                    <p class="main">사이트씨엠에스</p>
+                </div>
+            </div>
+            <div class="nav-body">
+                <span class="nav-menu">請求管理</span>
+                <span class="nav-menu">특집</span>
+                <span class="nav-menu">배너</span>
+                <span class="nav-menu">장르</span>
+                <span class="nav-menu">바우처코드</span>
+                <span class="nav-menu">신작·금방방영됨</span>
+                <span class="nav-menu"><a th:href="@{/in-app-review}">인앱리뷰</a></span>
+                <span class="nav-menu">암호변경</span>
+            </div>
+        </nav>
+        <div class="contents">
+            <div class="category_item_section">
+                <span class="category_title">이것은 연습 등록 페이지의 전이처의</span>
+            </div>
+            <div class="category_item_section">
+                <form id="test" th:object="${inAppReviewForm}">
+                    <input type="hidden" th:feild="*{inAppReviewId}">
+                    <div class="category_item_section">
+                        <div>
+                            <span>등록명</span>
+                            <input type="text" th:field="*{inAppReviewId}">
+                        </div>
+                        <div>
+                            <span>표시화면</span>
+                            <input type="text" th:field="*{inAppReviewName}">
+                        </div>
+                        <div>
+                            <span>표시와꾸</span>
+                            <input type="text" th:feild="*{inAppReviewName}">
+                        </div>
+                        
+                        <div>
+                            <span>전이처</span>
+                            <select th:field="*{transition}" onchange="changeTransition()">
+                                <option value=""></option>
+                                <option th:each="transitionItem:${transitionList}" th:value="${transitionItem.transitionId}" th:text="${transitionItem.transitionName}"/>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display : none;" id="contentsSection">
+                        <!-- inputItemList 내용물 갯수만큼 반복 -->
+                        <div style="display:block;">
+                            <span class="category_title">컨텐츠 선정</span>
+                        </div>
+                        <div th:each="item : ${inputItemList}" class="contents_item" id="condition_item">
+                        
+                            <!-- type1 TEXT_BOX일 떄 텍스트박스 생성(아니면 아무것도 생성하지 않음) -->
+                            <div th:if="${item.typeId} == 'TEXT_BOX' ">
+                                <span th:text="${item.name}"/>
+                                <input type="hidden" th:id="${item.typeId}">
+                                <input type="text" th:id="content_item_[__${itemStat.index}__]">
+                            </div>
+                            <!-- type2 CHECK_BOX일 떄 -->
+                            <div th:if="${item.typeId} == 'CHECK_BOX' ">
+                                <span th:text="${item.name}"/>
+                                <input type="hidden" th:id="${item.typeId}">
+                                <input type="checkbox" th:id="content_item_[__${itemStat.index}__]">
+                            </div>
+                            <!-- type3 DROPDOWN_LIST일 떄 -->
+                            <div th:if="${item.typeId} == 'DROPDOWN_LIST' ">
+                                <span th:text="${item.name}"/>
+                                
+                                <!-- dropdown list는 select로 만듭니다 -->
+                                <input type="hidden" th:id="${item.typeId}">
+                                <select style="width:160px;" th:id="content_item_[__${itemStat.index}__]">
+                                    <!-- 내용물은option을 써서 채워넣구요 -->
+                                    <!-- th:text는 선택지에 보여질 이름이고 -->
+                                    <!-- th:value는 실제로 입력받을 데이터 값입니다 -->
+                                    <option th:each="condition_item : ${conditionList}" 
+                                    th:if="${condition_item.listId} == ${item.listId}"
+                                    th:text="${condition_item.name}"
+                                    th:value="${condition_item.itemId}"></option>
+                                </select>
+                            </div>
+                            <!-- type1 textbox일 떄 -->
+                            <div th:if="${item.typeId} == 'COLOR' ">
+                                <span th:text="${item.name}"/>
+                                <input type="color">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display : none;" id="urlSection">
+                        <span>URL</span>
+                        <input type="text" th:field="*{url}">
+                    </div>
+                    <div style="display : none;" id="liveSummaryPageSection">
+                        <span>라이브 특집 페이지 식별자</span>
+                        <input type="text" th:field="*{liveSummaryPageId}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="/js/regist.js" defer></script>
+
+</html>

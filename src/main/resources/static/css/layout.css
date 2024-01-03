@@ -1,0 +1,303 @@
+body {
+    width: 90%;
+    max-width: 1080px;
+    margin: 0px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+table th {
+  background-color: #F2F2F2;
+}
+table td span{
+    display: flex;
+}
+table.layout_table{
+    border:none;
+    background:none;
+}
+table.layout_table th{
+    width: 15%;
+    text-align: left;
+    border:none;
+    background:none;
+}
+table.layout_table td{
+    border:none;
+    background:none;
+}
+
+.center {
+  text-align: center;
+}
+
+.connection_management_result .result_txt{
+    display:inline-block;
+    width:15%;
+    text-align:center;
+}
+.connection_management_result .edit_txt{
+    margin-right:2em;
+}
+
+
+.category_title{
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1px 5px;
+}
+
+.category_item_section{
+    margin-bottom:3em;
+}
+
+.category_item_section .section_title {
+    font-size: 16pt;
+    font-weight: 400;
+    margin:20px 0px 5px 0px;
+}
+.category_item_section .item_title{
+    display: inline-block;
+    width: 10%;
+    min-width: 160px;
+}
+
+
+/* ====================================== 特定Layout用CSS ===================================== */
+
+.bank_area input{
+    width: 100%;
+}
+
+.basic-design label{
+    display: inline-block;
+    width: 10%;
+    min-width: 160px;
+}
+
+/* ======================================   Modal CSS   ===================================== */
+.modal{
+    display: none;
+    position: absolute;
+    left: 30%;
+    top:40%;
+    width: 40%;
+    height: 15%;
+    background: #A7A7A7;
+}
+
+.modal.on{
+    display: block;
+}
+
+.modal .bt{
+    display: inline-block;
+    width: 15%;
+    min-width: 100px;
+    margin: 5%;
+    padding: 5px;
+    background: #777;
+}
+
+/* ====================================== 基本Layout用CSS ===================================== */
+
+.header{
+    display: flex;
+    margin-bottom: 1em;
+}
+.header-left{
+    text-align: left;
+    width: 25%;
+}
+.header-left .main{
+    margin-bottom:0px;
+    font-size:14pt;
+}
+.header-left .sub{
+    margin-top: 0px;
+    font-size:10pt;
+}
+.header-center{
+    text-align: center;
+    margin: 0px auto;
+    font-size: 20pt;
+}
+.header-right{
+    text-align: right;
+    width: 25%;
+    padding: 5px;
+}
+.header.row{
+    flex-direction: row;
+}
+.header.column{
+    flex-direction: column;
+}
+.header.space-between{
+    justify-content: space-between;
+}
+.header-menu{
+    border: 1px solid;
+    width: 8em;
+    margin: 2px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+.header-menu.type1{
+    border-top: 10px solid rgb(0, 128, 255);
+}
+.header-menu.type2{
+    border-top: 10px solid rgb(0, 255, 0);
+}
+.header-menu.type3{
+    border-top: 10px solid rgb(255, 128, 0);
+}
+.header-menu.selected{
+    background-color: red;
+    border: 1px solid red;
+    border-top:10px solid red;
+    color: #fff;
+}
+
+.nav{
+    max-width:300px;
+    width:30%;
+}
+
+.nav-menu{
+    padding: 5px 0px;
+}
+
+.nav-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.contents{
+    width: 70%;
+}
+
+.contents_row{
+    display: flex;
+}
+
+.content_container{
+    border: 1px solid;
+    margin: 1em;
+    padding: 1em;
+    padding-bottom:3em;
+}
+
+.contents_item{
+    display: inline-block;
+    width: 220px;
+    padding: 3px;
+}
+
+.line{
+    display:block;
+    width:100%;
+    height:20px;
+    border-top:1px solid;
+    margin:0px;
+}
+.blue{
+    margin-right: 15px;
+    margin-left: 5px;
+    color: #59adf7;
+}
+
+.div_right{
+    text-align: end;
+}
+
+.bt-confirm{
+    background: linear-gradient(#b4c7e7,#cedaef,#b4c7e7);
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 5em;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bt-gray {
+    display: inline-block;
+    width: auto;
+    padding: 2px 6px;
+    background: #999;
+    text-align: center;
+    cursor: pointer;
+}
+
+.txt_blue{
+    color: #59adf7;
+}
+
+.mg-l-1em{
+    margin-left:1em;
+}
+.mg-l-2em{
+    margin-left:2em;
+}
+.mg-l-3em{
+    margin-left:3em;
+}
+
+.mg-b-1em{
+    margin-bottom:1em;
+}
+.mg-b-2em{
+    margin-bottom:2em;
+}
+.mg-b3em{
+    margin-bottom:3em;
+}   
+
+.mg-center{
+    display:block;
+    margin:0px auto;
+}
+
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+
+.w20{
+    width:20%;
+}
+.w30{
+    width:30%;
+}
+.w40{
+    width:40%;
+}
+.w50{
+    width:50%;
+}
+.w100{
+    width:100%
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.test{
+    color:red;
+}
+
+.cursor{
+    cursor:pointer;
+}
